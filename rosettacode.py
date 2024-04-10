@@ -400,7 +400,7 @@ class Category(object):
                             if atag.get('href', None):
                                 match = self.match_re.search(atag['href'])
                                 if match:
-                                    linkname = unquote(str(match.group(1))).decode('utf-8')
+                                    linkname = unquote(str(match.group(1)))
                                     self._links.append((atag['title'], linkname))
                     ele = ele.nextSibling
         return self._links
