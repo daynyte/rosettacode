@@ -73,11 +73,11 @@ def cache_page(url, name):
     cache_file = os.path.join(cache, name)
     if os.path.isfile(cache_file):
         with open(cache_file, 'r') as fh:
-            page = fh.read().decode('utf-8')
+            page = fh.read()
     else:
         page = requests.get(url).text
         with open(cache_file, 'w') as fh:
-            fh.write(page.encode('utf-8'))
+            fh.write(page)
     return page
 
 
