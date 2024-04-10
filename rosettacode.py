@@ -48,6 +48,7 @@ try:
 except ImportError:
     # Python 3
     from html.parser import HTMLParser
+    from html import unescape
 html = HTMLParser()
 
 # External libraries
@@ -264,7 +265,7 @@ class Task(object):
             area = ''
             if ta:
                 area = ta[0].contents[0]
-            self._edit = html.unescape(area)
+            self._edit = unescape(area)
         return self._edit
 
     @property
