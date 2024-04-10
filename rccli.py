@@ -162,14 +162,10 @@ def main():
     result = None
 
     if options.category:
-        # This will be UTF-8 encoded, so we need to decode to the unicode we use
-        # internally.
-        options.category = options.category.decode('utf-8')
+        options.category = options.category
         result = Category(options.category)
     elif options.task:
-        # What they supplied will be UTF-8 encoded; so let's decode it to get
-        # the unicode name that we expect internall.
-        options.task = options.task.decode('utf-8')
+        options.task = options.task
         result = Task(options.task)
 
     if result is None:
