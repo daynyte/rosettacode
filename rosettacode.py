@@ -68,6 +68,8 @@ cache = 'no-backup'
 
 
 def cache_page(url, name):
+    if not os.path.exists(cache):
+        os.makedirs(cache)
     cache_file = os.path.join(cache, name)
     if os.path.isfile(cache_file):
         with open(cache_file, 'r') as fh:
