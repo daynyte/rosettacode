@@ -60,7 +60,7 @@ except ImportError:
     # Python 2
     from urllib import unquote, quote
 
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 
 base_url = "http://rosettacode.org"
