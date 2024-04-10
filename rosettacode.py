@@ -260,7 +260,7 @@ class Task(object):
     @property
     def edit(self):
         if not self._edit:
-            soup = BeautifulSoup(self.page)
+            soup = BeautifulSoup(self.page, features='lxml')
             ta = soup.findAll('textarea')
             area = ''
             if ta:
@@ -387,7 +387,7 @@ class Category(object):
         if self._links is not None:
             return self._links
 
-        soup = BeautifulSoup(self.page)
+        soup = BeautifulSoup(self.page, features='lxml')
         headings = soup.findAll('h2')
         for heading in headings:
             if heading.string and heading.string.startswith('Pages in'):
