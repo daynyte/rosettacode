@@ -42,24 +42,14 @@ See the CLI tool for its use.
 import os.path
 import re
 
-try:
-    # Python 2.6-2.7
-    from HTMLParser import HTMLParser
-except ImportError:
-    # Python 3
-    from html.parser import HTMLParser
-    from html import unescape
+from html.parser import HTMLParser
+from html import unescape
 html = HTMLParser()
 
 # External libraries
 import requests
 
-try:
-    # Python 3
-    from urllib.parse import unquote, quote
-except ImportError:
-    # Python 2
-    from urllib import unquote, quote
+from urllib.parse import unquote, quote
 
 from bs4 import BeautifulSoup
 
